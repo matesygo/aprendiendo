@@ -7,17 +7,20 @@ func TestSaludo(t *testing.T) {
 		tengo := Saludo("Chris")
 		quiero := "Hola, Chris"
 
-		if tengo != quiero {
-			t.Errorf("tengo %q quiero %q", tengo, quiero)
-		}
+		evaluarMensajeCorrecto(t, tengo, quiero)
 	})
 
 	t.Run("saludar al mundo entero cuando no se ingrese ningun nombre/cadena de texto como argumento", func(t *testing.T) {
 		tengo := Saludo("")
 		quiero := "Hola, mundo"
 
-		if tengo != quiero {
-			t.Errorf("tengo %q quiero %q", tengo, quiero)
-		}
+		evaluarMensajeCorrecto(t, tengo, quiero)
 	})
+}
+
+func evaluarMensajeCorrecto(t testing.TB, tengo, quiero string) {
+	t.Helper()
+	if tengo != quiero {
+		t.Errorf("obtuve %q quiero %q", tengo, quiero)
+	}
 }
