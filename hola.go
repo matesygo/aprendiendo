@@ -1,9 +1,7 @@
 package main
 
-func Saludo(nombre string) string {
-	return "Hola, " + nombre
-}
+const prefijoEnEspañol = "Hola, "
 
-// func main() {
-// 	fmt.Print(Saludo())
-// }
+func Saludo(nombre string) string {
+	return prefijoEnEspañol + nombre
+}
